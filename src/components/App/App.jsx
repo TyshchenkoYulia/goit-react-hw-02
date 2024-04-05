@@ -10,13 +10,13 @@ import Notification from '../Notification/Notification';
 import './App.css';
 
 export default function App() {
-  
+
   const [clicks, setClicks] = useState(() => {
-    const savedValue = window.localStorage.getItem("saved-value");
-    if (savedValue !== 0) {
-      return JSON.parse(savedValue)
-    }
-    return { good: 0, neutral: 0, bad: 0 }
+    // const savedValue = window.localStorage.getItem("saved-value");
+    // if (savedValue !== null) {
+    //   return JSON.parse(savedValue)
+    // }
+    // return { good: 0, neutral: 0, bad: 0 };
     
   });
 
@@ -26,8 +26,8 @@ export default function App() {
   
   const updateFeedback = feedbackType => {
     setClicks({
-       ...clicks,
-      [feedbackType]: clicks(feedbackType) + 1 
+      ...clicks,
+      [feedbackType]: clicks[feedbackType] + 1, 
     });
   }
   
