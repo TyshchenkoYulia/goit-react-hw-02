@@ -1,8 +1,6 @@
 import css from "./Options.module.css";
 
 export default function Options({ onUpdate, total, onReset }) {
-  //   const keys = Object.keys(clicks);
-
   return (
     <div className={css.container}>
       <button
