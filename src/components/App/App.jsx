@@ -54,10 +54,11 @@ export default function App() {
         total={totalFeedback}
         reset={onReset}
       />
-      {totalFeedback > 0 && (
+      {totalFeedback > 0 ? (
         <Feedback value={clicks} total={totalFeedback} positive={positive} />
+      ) : (
+        <Notification total={totalFeedback} />
       )}
-      {totalFeedback === 0 && <Notification total={totalFeedback} />}
     </>
   );
 }
